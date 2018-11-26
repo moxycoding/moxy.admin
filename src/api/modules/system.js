@@ -51,3 +51,18 @@ export function updatePwd(data) {
     data: data
   })
 }
+
+export function getConfigSetting() {
+  return request({
+    url: '/v1/system/config/setting',
+    method: 'get'
+  })
+}
+
+export function updateConfigSetting(data) {
+  return request({
+    url: '/v1/system/config/update',
+    method: 'POST',
+    data: data
+  })
+}

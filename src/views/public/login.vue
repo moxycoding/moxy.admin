@@ -1,22 +1,52 @@
 <template>
   <div class="login-container">
-    <el-form autoComplete="on" :model="loginForm" :rules="loginRules" status-icon ref="loginForm" label-position="left" label-width="0px" class="card-box login-form">
+    <el-form
+      autoComplete="on"
+      :model="loginForm"
+      :rules="loginRules"
+      status-icon
+      ref="loginForm"
+      label-position="left"
+      label-width="0px"
+      class="card-box login-form"
+    >
       <h3 class="title">墨玄涯博客管理系统</h3>
       <el-form-item prop="adminName">
         <span class="svg-container svg-container_login">
           <i class="el-icon-edit" />
         </span>
-        <el-input name="adminName" type="text" v-model="loginForm.adminName" autoComplete="on" placeholder="用户名" />
+        <el-input
+          name="adminName"
+          type="text"
+          v-model="loginForm.adminName"
+          autoComplete="on"
+          placeholder="用户名"
+        />
       </el-form-item>
       <el-form-item prop="adminPwd">
         <span class="svg-container">
           <i class="el-icon-edit" />
         </span>
-        <el-input name="adminPwd" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.adminPwd" autoComplete="on" placeholder="密码"></el-input>
-        <span class="show-pwd" @click="showPwd"></span>
+        <el-input
+          name="adminPwd"
+          :type="pwdType"
+          @keyup.enter.native="handleLogin"
+          v-model="loginForm.adminPwd"
+          autoComplete="on"
+          placeholder="密码"
+        ></el-input>
+        <span
+          class="show-pwd"
+          @click="showPwd"
+        ></span>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">
+        <el-button
+          type="primary"
+          style="width:100%;"
+          :loading="loading"
+          @click.native.prevent="handleLogin"
+        >
           登录
         </el-button>
       </el-form-item>
@@ -57,7 +87,10 @@ export default {
         this.$api.account
           .login(this.loginForm)
           .then(res => {
-            this.$router.push({ path: this.$codes.index_path })
+            console.log(res)
+            if (res.status === 1) {
+              this.$router.push({ path: this.$codes.index_path })
+            }
           })
           .finally(() => {
             this.loading = false

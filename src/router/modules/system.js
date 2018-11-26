@@ -14,6 +14,15 @@ export default {
       }
     },
     {
+      path: 'admin/config/setting',
+      name: 'system_config_setting',
+      component: _import('system/config/setting'),
+      meta: {
+        auth: true,
+        title: '系统设置'
+      }
+    },
+    {
       path: 'admin/list',
       name: 'system_admin_list',
       component: _import('system/admin/list'),

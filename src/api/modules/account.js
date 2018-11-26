@@ -9,6 +9,7 @@ export function login(data) {
     if (res.data && res.data) {
       localStorage.token = res.data
     }
+    return res
   })
 }
 

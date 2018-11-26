@@ -2,15 +2,38 @@
   <div>
     <el-row>
       <el-col :span="24">
-        <el-form ref="form" :rules="rules" :model="form" label-width="200px" v-loading="submit_loading">
-          <el-form-item label="新密码" prop="newPassword" class="custom-input-small">
-            <el-input v-model="form.newPassword" type="password"></el-input>
+        <el-form
+          ref="form"
+          :rules="rules"
+          :model="form"
+          label-width="200px"
+          v-loading="submit_loading"
+        >
+          <el-form-item
+            label="新密码"
+            prop="newPassword"
+            class="custom-input-small"
+          >
+            <el-input
+              v-model="form.newPassword"
+              type="password"
+            ></el-input>
           </el-form-item>
-          <el-form-item label="确认密码" prop="confirmPassword" class="custom-input-small">
-            <el-input v-model="form.confirmPassword" type="password"></el-input>
+          <el-form-item
+            label="确认密码"
+            prop="confirmPassword"
+            class="custom-input-small"
+          >
+            <el-input
+              v-model="form.confirmPassword"
+              type="password"
+            ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">保存</el-button>
+            <el-button
+              type="primary"
+              @click="onSubmit"
+            >保存</el-button>
           </el-form-item>
         </el-form>
       </el-col>
