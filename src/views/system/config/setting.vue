@@ -45,7 +45,11 @@
 </template>
 
 <script>
+import VFormEditor from '@/components/VForm/Editor'
 export default {
+  components: {
+    VFormEditor
+  },
   data() {
     return {
       list: [],

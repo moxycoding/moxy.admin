@@ -1,3 +1,40 @@
 {
-    "files.insertFinalNewline": true
+  "extensions.ignoreRecommendations": false,
+  "git.ignoreMissingGitWarning": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true
+  },
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue",
+    {
+      "language": "html",
+      "autoFix": true
+    }
+  ],
+  "editor.tabSize": 4,
+  "html.format.endWithNewline": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.enableSmartCommit": true,
+  "editor.detectIndentation": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true
 }

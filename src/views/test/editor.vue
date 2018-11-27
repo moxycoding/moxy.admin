@@ -7,7 +7,11 @@
         {{form.text1}}
       </div>
     </div>
-    <div v-else v-html="previewHtml(form.text1)" class="preview-content"></div>
+    <div
+      v-else
+      v-html="previewHtml(form.text1)"
+      class="preview-content"
+    ></div>
 
     <v-btn-auth @click="form.preview2=!form.preview2">{{form.preview2?'显示编辑器':'预览内容'}}</v-btn-auth>
     <div v-if="!form.preview2">
@@ -16,12 +20,20 @@
         {{form.text2}}
       </div>
     </div>
-    <div v-else v-html="previewHtml(form.text2)" class="preview-content"></div>
+    <div
+      v-else
+      v-html="previewHtml(form.text2)"
+      class="preview-content"
+    ></div>
   </div>
 </template>
 
 <script>
+import VFormEditor from '@/components/VForm/Editor'
 export default {
+  components: {
+    VFormEditor
+  },
   data() {
     return {
       form: {
@@ -74,8 +86,3 @@ export default {
 }
 </script>
 
-<style>
-.preview-content img {
-  /* width: 100%; */
-}
-</style>

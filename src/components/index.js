@@ -4,7 +4,7 @@ import VBtnEdit from './VButton/Edit'
 import VBtnDel from './VButton/Del'
 
 import VFormInput from './VForm/Input'
-import VFormEditor from './VForm/Editor'
+// import VFormEditor from './VForm/Editor'
 import VFormSelect from './VForm/Select'
 import VFormTags from './VForm/Tags'
 
@@ -22,7 +22,7 @@ export default {
   VBtnEdit,
   VBtnDel,
   VFormInput,
-  VFormEditor,
+  // VFormEditor,
   VFormSelect,
   VFormTags,
   VPickerSelect,
