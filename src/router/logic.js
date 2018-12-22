@@ -12,6 +12,10 @@ const beforeEach = (to, from, next) => {
   // }
   if (checkAuth(to.name)) return next()
   getInfo().then(res => {
+    if (res.status === 0 || res.data == null) {
+      next('/login')
+      return
+    }
     window.authInfo = {
       authName: res.data.authName,
       menus: res.data.menus || [],
