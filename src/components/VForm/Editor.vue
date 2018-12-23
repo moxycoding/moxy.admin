@@ -1,7 +1,12 @@
 <template>
   <div>
     <div v-if="isMd"><textarea v-model="currentValue"></textarea></div>
-    <yimo-editor v-model="currentValue" :uploadHandler="uploadHandler" v-else></yimo-editor>
+    <yimo-editor
+      v-model="currentValue"
+      :config="config"
+      :uploadHandler="uploadHandler"
+      v-else
+    ></yimo-editor>
   </div>
 </template>
 
@@ -18,7 +23,17 @@ export default {
   },
   data() {
     return {
-      currentValue: this.value
+      currentValue: this.value,
+      config: {
+      }
+    }
+  },
+  created() {
+    this.config = {
+      uploadImgUrl: this.$api.common.getUploadUrl(),
+      uploadHeaders: {
+        Authorization: localStorage.token
+      }
     }
   },
   watch: {
@@ -31,7 +46,18 @@ export default {
   },
   methods: {
     uploadHandler(type, resTxt) {
-      return resTxt
+      if (type === 'success') {
+        var res = JSON.parse(resTxt)//Do not process the default look at the return value bit image path
+        if (res.status !== 1) {
+          return null
+        }
+        return res.data.fileUrl
+      } else if (type === 'error') {
+        //todo toast
+      } else if (type === 'timeout') {
+        //todo toast
+      }
+      return '上传失败__'
     }
   }
 }
