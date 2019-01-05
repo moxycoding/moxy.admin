@@ -131,7 +131,7 @@ $light_gray: #eee;
   .el-input {
     display: inline-block;
     height: 47px;
-    width: 85%;
+    width: 70%;
   }
   .tips {
     font-size: 14px;

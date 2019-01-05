@@ -42,3 +42,6 @@ body {
 .custom-input-small {
   width: 60%;
 }
+.layout-main-content .el-input--small{
+  min-width:200px;
+}

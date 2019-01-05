@@ -44,7 +44,7 @@ export default {
       menus: window.authInfo.menus,
       currentTab: '',
       pageTabs: [],
-      menuCollspse: window.innerWidth < 800,
+      menuCollspse: window.innerWidth < 600,
       headerHeight: 50,
       innerHeight: 0,
       disableTab: localStorage.DISABLE_TAB === 'true'
@@ -98,7 +98,7 @@ export default {
       }px;`
     },
     sidebarStyle() {
-      var w = this.menuCollspse ? 'width:0px;min-width:0px;' : 'width:auto;min-width:70px;'
+      var w = this.menuCollspse && window.innerWidth < 600 ? 'width:0px;min-width:0px;' : 'width:auto;min-width:70px;'
       return (
         'height:' +
         (this.innerHeight - this.headerHeight) +
@@ -171,7 +171,7 @@ export default {
   background: #1f2f3d;
   position: absolute;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   cursor: pointer;
   line-height: 40px;
   text-align: center;

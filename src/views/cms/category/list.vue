@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="18">
         <el-form :inline="true" @submit.native.prevent>
-          <el-form-item label="文章分类名称">
+          <el-form-item label="分类名称">
             <el-input type="text" v-model="search.keyword" clearable>
               <el-button slot="append" icon="el-icon-search" @click="e=>this.$refs.mytable.search()"></el-button>
             </el-input>
@@ -15,7 +15,7 @@
       </el-col>
     </el-row>
     <v-table-pager :loadAction="$api.cms.getCategoryList" :loadSearch="search" ref="mytable" show-checkbox :hide-pager="false" @handle-checkbox="e=>checkList=e">
-      <el-table-column prop="categoryName" label="文章分类名称">
+      <el-table-column prop="categoryName" label="分类名称">
       </el-table-column>
       <el-table-column prop="createdAt" label="创建时间">
       </el-table-column>

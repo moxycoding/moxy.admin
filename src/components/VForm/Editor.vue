@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="custom-editor-container">
     <div v-if="isMd"><textarea v-model="currentValue"></textarea></div>
     <yimo-editor
       v-model="currentValue"
@@ -62,3 +62,9 @@ export default {
   }
 }
 </script>
+<style>
+.custom-editor-container{
+  clear:both;
+  display: inline-block;
+}
+</style>
