@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="24">
         <el-form
-          label-width="200px"
+          :label-width="$codes.form_label_width"
           v-loading="submit_loading"
         >
           <template v-for="item in list">

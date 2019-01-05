@@ -24,7 +24,7 @@
         />
       </el-form-item>
       <el-form-item prop="adminPwd">
-        <span class="svg-container">
+        <span class="svg-container svg-container_login">
           <i class="el-icon-edit" />
         </span>
         <el-input
@@ -63,6 +63,9 @@ export default {
       loginRules: {
         adminName: [
           { required: true, trigger: 'blur', message: '请输入用户名' }
+        ],
+        adminPwd: [
+          { required: true, trigger: 'blur', message: '请输入密码' }
         ]
       },
       loading: false,
@@ -139,7 +142,7 @@ $light_gray: #eee;
     padding: 6px 5px 6px 15px;
     color: $dark_gray;
     vertical-align: middle;
-    width: 30px;
+    width: 20px;
     display: inline-block;
     &_login {
       font-size: 20px;
@@ -157,7 +160,7 @@ $light_gray: #eee;
     position: absolute;
     left: 0;
     right: 0;
-    width: 400px;
+    max-width: 400px;
     padding: 35px 35px 15px 35px;
     margin: 120px auto;
   }

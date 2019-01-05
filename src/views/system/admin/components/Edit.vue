@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <el-form ref="form" :model="form" label-width="200px" v-loading="submit_loading">
+      <el-form ref="form" :model="form" :label-width="$codes.form_label_width" v-loading="submit_loading">
         <el-form-item label="管理员名称" class="custom-input-small">
           <el-input v-model="form.adminName"></el-input>
         </el-form-item>

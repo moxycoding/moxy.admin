@@ -4,7 +4,7 @@
       <el-form
         ref="form"
         :model="form"
-        label-width="200px"
+        :label-width="$codes.form_label_width"
         v-loading="submit_loading"
       >
         <el-form-item

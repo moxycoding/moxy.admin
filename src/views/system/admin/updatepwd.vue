@@ -6,7 +6,7 @@
           ref="form"
           :rules="rules"
           :model="form"
-          label-width="200px"
+          label-width="auto"
           v-loading="submit_loading"
         >
           <el-form-item

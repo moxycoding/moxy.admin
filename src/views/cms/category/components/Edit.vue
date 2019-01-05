@@ -1,11 +1,11 @@
 <template>
   <el-row>
     <el-col :span="24">
-      <el-form ref="form" :model="form" label-width="200px" v-loading="submit_loading">
-        <el-form-item label="文章分类名称" class="custom-input-small">
+      <el-form ref="form" :model="form" :label-width="$codes.form_label_width" v-loading="submit_loading">
+        <el-form-item label="分类名称" class="custom-input-small">
           <el-input v-model="form.categoryName"></el-input>
         </el-form-item>
-        <el-form-item label="文章分类描述" class="custom-input-small">
+        <el-form-item label="分类描述" class="custom-input-small">
           <el-input v-model="form.categoryDesc" type="textarea"></el-input>
         </el-form-item>
         <el-form-item>

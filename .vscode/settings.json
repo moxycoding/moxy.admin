@@ -12,7 +12,7 @@
   },
   "vetur.format.defaultFormatter.js": "vscode-typescript",
   "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "eslint.validate": [

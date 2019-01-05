@@ -4,7 +4,7 @@
       <v-app-header />
     </el-header>
     <el-container>
-      <el-aside :style="sidebarStyle">
+      <el-aside :style="sidebarStyle" class="custom-menu-aside">
         <v-app-sidebar :collspse="menuCollspse" />
       </el-aside>
       <el-container class="layout-main">
@@ -98,10 +98,11 @@ export default {
       }px;`
     },
     sidebarStyle() {
+      var w = this.menuCollspse ? 'width:0px;min-width:0px;' : 'width:auto;min-width:70px;'
       return (
-        'width:auto;height:' +
+        'height:' +
         (this.innerHeight - this.headerHeight) +
-        'px;min-width:70px;'
+        'px;' + w
       )
     },
     router_cache() {
@@ -131,7 +132,7 @@ export default {
     clickTab(tab) {
       var currentRoute = this.pageTabs.find(e => e.tabKey === this.currentTab)
       if (!currentRoute) return this.$ui.pages.link(this.$codes.index_path)
-      this.$ui.pages.link(currentRoute.tabRoute)``
+      this.$ui.pages.link(currentRoute.tabRoute)
     },
     removeTab(targetName) {
       this.pageTabs = this.pageTabs.filter(e => e.tabKey !== targetName)
